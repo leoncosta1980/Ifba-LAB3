@@ -1,26 +1,37 @@
-import './Index.Modal.css';
+import { useState } from 'react';
+import './Index.Modal.css'
+import { DescriptionModal } from './Description.Modal';
 
 interface IModal {
     Estado: boolean;
-    setOpen: (Estado: boolean) =>void;
-    tytle: string
+    setOpen: (Estado: boolean) => void;
+    title: string
     description: string
 }
-export function Modal({ Estado, setOpen, tytle, description }: IModal) {
 
-    if (Estado) {
-        return (
-            <div className= "background">
-                <div className= "modal">
-                    <div>
-                        <h2>{tytle}</h2>
-                        <p>{description}</p>
-                        <button className='botao' onClick={() => setOpen(!Estado)}>Fechar</button>
-                    </div>
-                </div>
+export function Modal({ Estado, setOpen, title, description }: IModal) {
+    
+    const [isDescriptionOpen, setDescriptionOpen] = useState(false);
+
+    const botaoAberto = () => {
+      setDescriptionOpen(true);
+    };
+  
+    const botaoFechado = () => {
+      setDescriptionOpen(false);
+    };
+    
+    
+    return (
+        <div>
+            <h2 className='App2'>{title}</h2>
+            <div className='App'>
+            <button className='botao' onClick={() => { setOpen(!Estado); botaoAberto(); }}>Abrir Modal</button>
             </div>
-        )
-    } else {
-        return <></>;
-    }
+            <DescriptionModal
+            description={description}
+            aberto={isDescriptionOpen}
+            fechado={botaoFechado}/>
+        </div>
+    )
 }
