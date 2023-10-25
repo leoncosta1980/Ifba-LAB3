@@ -1,10 +1,12 @@
-.App2{
+import styled from "styled-components"
+
+export const StyledApp2 = styled.div`
     position: absolute;
     top: 15%;
     left: 30%;
     margin: -25px 0 0 -25px;
-}
-.modal {
+`;
+export const Styledmodal =  styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
@@ -14,15 +16,13 @@
     color: black;
     padding: 4rem;
     border-radius: 15px;
-}
+    `
 
-.botao {
+export const Styledbotao = styled.button`
     position: absolute;
-    top: 35%;
-    left: 42%;
-    margin: -25px 0 0 -25px;
-    border-radius: 3em;
-    display: flex;
+    top: 50%;
+    left: 50%;
+    margin: +30px 0 0 +10px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -32,14 +32,4 @@
     transition: all 0.6s ease-in-out 0s;
     box-shadow: inset 0 0 20px #000;
     max-width: 400px;
-}
-
-
-.botao:hover {
-    background: transparent;
-    color: rgba(200, 246, 253, 0.402);
-    transform: scale(1.5) rotate(360deg);
-    box-shadow: 0 0 30px rgba(26, 119, 133, 0.402);
-    cursor: grab;
-    border: 2px solid rgba(6, 71, 81, 0.402);
-}
+`

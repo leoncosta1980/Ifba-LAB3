@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Index.Modal.css'
+import {StyledApp2, Styledbotao} from './Index.Modal.ts'
 import { DescriptionModal } from './Description.Modal';
 
 interface IModal {
@@ -24,10 +24,10 @@ export function Modal({ Estado, setOpen, title, description }: IModal) {
     
     return (
         <div>
-            <h2 className='App2'>{title}</h2>
-            <div className='App'>
-            <button className='botao' onClick={() => { setOpen(!Estado); botaoAberto(); }}>Abrir Modal</button>
-            </div>
+            <StyledApp2>{title}</StyledApp2>
+            <StyledApp2>
+            <Styledbotao onClick={() => { setOpen(!Estado); botaoAberto(); }}>Abrir Modal</Styledbotao>
+            </StyledApp2>
             <DescriptionModal
             description={description}
             aberto={isDescriptionOpen}

@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import { Modal } from './Components/Index';
-import './App.css'
+import {StyledContainer, StyledChild } from './Components/App.style'
+//*import './App.css'
 
 function App() {
 
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <div className='container'>
-      <div className='child'>
+    <StyledContainer>
+      <StyledChild>
         <Modal Estado={open} setOpen={setOpen} title={"Titulo do Modal"} description={"Descrição do Modal"} />
-      </div>
-    </div>
+      </StyledChild>
+    </StyledContainer>
   )
 }
 

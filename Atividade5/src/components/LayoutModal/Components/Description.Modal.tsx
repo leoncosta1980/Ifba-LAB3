@@ -1,4 +1,4 @@
-import './Index.Modal.css'
+import {StyledApp2, Styledmodal} from './Index.Modal'
 interface IDescriptionModal {
     description: string;
     aberto: boolean;
@@ -10,12 +10,12 @@ export function DescriptionModal({ description, aberto, fechado }: IDescriptionM
         return null;
     }
     return (
-        <div className="App2">
-            <div className="modal">
+        <StyledApp2>
+            <Styledmodal>
                 <h2>Descrição do Modal</h2>
                 <p>{description}</p>
                 <button onClick={fechado}>Fechar Modal</button>
-            </div>
-        </div>
+            </Styledmodal>
+        </StyledApp2>
     );
 }
